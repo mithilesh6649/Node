@@ -1,4 +1,38 @@
-//console.log(' Welcome Node ! By Wap ');
+   
+   const http = require('http');
+   const server = http.createServer((request,response)=>{
+       
+       //Operation 
+
+       const date = new Date();
+       const current_date = date.toLocaleDateString(); 
+
+       //header info
+
+       response.writeHead(200,'success',{
+          'Content-Type':'application/json'
+       });
+
+       //response in json format
+
+       const result = {
+          current_date: current_date   
+       }
+
+       const string_date = JSON.stringify(result);
+
+       response.write(string_date);
+
+       response.end();
+
+
+   }); 
+
+   server.listen(8080);
+
+
+
+//console.log(' Welcome Node ! By Wap Institute ');
 
 // const http = require("http"); 
 
@@ -26,35 +60,35 @@
 
 
 
-const http  = require('http');
+// const http  = require('http');
 
-const server = http.createServer((request,response)=>{
+// const server = http.createServer((request,response)=>{
    
-   //operation 
-   	const date = new Date(); 
-    const current_date = date.toLocaleDateString(); 
+//    //operation 
+//    	const date = new Date(); 
+//     const current_date = date.toLocaleDateString(); 
 
-  // header info
+//   // header info
  
-   response.writeHead(200,{
-   	 'Content-Type':'application/json'
-   });
+//    response.writeHead(200,{
+//    	 'Content-Type':'application/json'
+//    });
 
-   //response in json format [so created json format in below]
+//    //response in json format [so created json format in below]
  
-    const result = {
-    	current_date : current_date
-    };
+//     const result = {
+//     	current_date : current_date
+//     };
 
-    const string_data = JSON.stringify(result);  // JSON.stringify() this function conver json object into string
+//     const string_data = JSON.stringify(result);  // JSON.stringify() this function conver json object into string
 
- // NOTE :- response.write() write mai kabhi bhi json ke format mai data pass nahi hota hai always strign pass hota hai
-   response.write(string_data);
+//  // NOTE :- response.write() write mai kabhi bhi json ke format mai data pass nahi hota hai always strign pass hota hai
+//    response.write(string_data);
 
 
-  //disconnect user
-   response.end(); 
+//   //disconnect user
+//    response.end(); 
 
-}); 
+// }); 
 
-server.listen(8080);
+// server.listen(8080);

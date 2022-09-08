@@ -12,34 +12,34 @@
    request.on('end',()=>{
         const data = query.parse(userData);
        // console.log(data.name,data.password);
-       //response.write(data.password);
+       response.write(JSON.stringify(data.password));
 
-        let username  = data.name;
-        let password  = data.password;
+       // let username  = data.name;
+       // let password  = data.password;
 
-       if(username == 'mithilesh' && password == '12345678'){
+       // if(username == 'mithilesh' && password == '12345678'){
 
-          response.writeHead(200,{
-             'Content-Type':'application/json'
-          });
+       //    response.writeHead(200,{
+       //       'Content-Type':'application/json'
+       //    });
 
-          const successMessage = JSON.stringify({
-             message:"User authenticated !",
-          });
+       //    const successMessage = JSON.stringify({
+       //       message:"User authenticated !",
+       //    });
 
-          response.write(successMessage);
-       }else{
+       //    response.write(successMessage);
+       // }else{
 
-           response.writeHead(401,{
-              'Content-Type':'application/json'
-           });
+       //     response.writeHead(401,{
+       //        'Content-Type':'application/json'
+       //     });
 
-           const failedMessage = JSON.stringify({
-             message:"User  Unauthenticated !",
-           });
+       //     const failedMessage = JSON.stringify({
+       //       message:"User  Unauthenticated !",
+       //     });
 
-          response.write(failedMessage);
-       }  
+       //    response.write(failedMessage);
+       // }  
 
 
        response.end();
